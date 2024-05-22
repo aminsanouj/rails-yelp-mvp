@@ -1,0 +1,10 @@
+<% if @restaurant.reviews.present? %>
+  <h2>Reviews:</h2>
+  <% @restaurant.reviews.each do |review| %>
+    <p>Content: <%= review.content %></p>
+    <p>Rating: <%= review.rating %></p>
+    <hr>
+  <% end %>
+<% else %>
+  <p>Aucune critique disponible pour ce restaurant.</p>
+<% end %>
