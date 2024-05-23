@@ -12,3 +12,16 @@
 
 
 <%= link_to "back to restaurant", restaurants_path %>
+
+<h1>Add new restaurant</h1>
+
+<div class="container w-25">
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :category, collection: Restaurant::CATEGORY %>
+    <%= f.submit "save" %>
+  <% end %>
+</div>
+
+  <%= link_to "back", restaurants_path %>
